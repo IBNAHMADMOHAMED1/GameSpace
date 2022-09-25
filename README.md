@@ -25,10 +25,13 @@ So, to make this project a success, you must focus mainly on these major points:
 
 ## Workflow :
 
-• A player must choose the game and how long he wants to play.
-• Admin of GameSpace enters the player's information (first name, last name, N ° of free post, start time, time period, chosen game), a player code must be automatically generated.
-• The player pays the necessary amount.
-• The chosen post is automatically started, once the time is up, a sign must be sent to turn off the post.
-• After each payment of a player, the amount will be accumulated, to have the total amount of the day.
-• The admin can also see the total income of the month.
-• At the beginning, try to create the program of a procedural, later you can migrate your project to an object-oriented version.
+- [x] 1• A player must choose the game and how long he wants to play.
+- [x] 2• Admin of GameSpace enters the player's information (first name, last name, N ° of free post, start time, time period, chosen game), a player code must be automatically generated.
+- [x] 3• The player pays the necessary amount.
+- [x] 4• The chosen post is automatically started, once the time is up, a sign must be sent to turn off the post.
+- [x] 5• After each payment of a player, the amount will be accumulated, to have the total amount of the day.
+- [x] 6• The admin can also see the total income of the month.
+- [x] 7• At the beginning, try to create the program of a procedural, later you can migrate your project to an object-oriented version.
+
+## Bonus :
+- [x] 1• Try to apply a percentage reduction of 5% for people who will play FIFA and for 2 hours or more, and a percentage of 2% for the first arrived at the game room, and 10% for those who will choose to play more than 5 hours using the PS5 post and Samsung screen.
