@@ -1,0 +1,9 @@
+{
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "aiXcoder.showTrayIcon": true,
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\youcode\\Downloads\\json-simple-1.1.1.jar",
+        "c:\\Users\\youcode\\Downloads\\gson-2.9.0-javadoc.jar"
+    ]
+}

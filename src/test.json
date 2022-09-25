@@ -1,0 +1,111 @@
+[
+  {
+    "date": "2022/09/23 ",
+    "name": "MM",
+    "post": "1",
+    "start": "14:25:26.572380300",
+    "end": "15:25:26.572380300",
+    "duration": "1",
+    "gameName": "PES",
+    "ref": "2027",
+    "amount": "10",
+    "console": "XBOX",
+    "screen": "null"
+  },
+  {
+    "date": "2022/09/23 ",
+    "name": "HH",
+    "post": "1",
+    "start": "14:43:11.163231900",
+    "end": "15:43:11.163231900",
+    "duration": "1",
+    "gameName": "PES",
+    "ref": "4437",
+    "amount": "10",
+    "console": "XBOX",
+    "screen": "null"
+  },
+  {
+    "date": "2022/09/23 ",
+    "name": "LLL",
+    "post": "1",
+    "start": "14:43:38.632160400",
+    "end": "15:43:38.632160400",
+    "duration": "1",
+    "gameName": "PES",
+    "ref": "8902",
+    "amount": "10",
+    "console": "XBOX",
+    "screen": "null"
+  },
+  {
+    "date": "2022/09/23 ",
+    "name": "GGD",
+    "post": "1",
+    "start": "14:44:59.312733100",
+    "end": "15:44:59.312733100",
+    "duration": "1",
+    "gameName": "PES",
+    "ref": "981",
+    "amount": "10",
+    "console": "XBOX",
+    "screen": "null"
+  },
+  {
+    "date": "2022/09/23 ",
+    "name": "LL",
+    "post": "1",
+    "start": "14:47:09.231470600",
+    "end": "15:47:09.231470600",
+    "duration": "1",
+    "gameName": "PES",
+    "ref": "321",
+    "amount": "10",
+    "console": "XBOX",
+    "screen": "null"
+  },
+  
+]
+{
+    "date": "2022/09/23 ",
+    "name": "DD",
+    "post": "1",
+    "start": "14:50:33.255888300",
+    "end": "15:50:33.255888300",
+    "duration": "1",
+    "gameName": "PES",
+    "ref": "7385",
+    "amount": "10",
+    "console": "XBOX",
+    "screen": "null"
+  }
+  {
+    "date": "2022/09/23 ",
+    "name": "DD",
+    "post": "1",
+    "start": "14:50:33.255888300",
+    "end": "15:50:33.255888300",
+    "duration": "1",
+    "gameName": "PES",
+    "ref": "7385",
+    "amount": "10",
+    "console": "XBOX",
+    "screen": "null"
+  },
+  {
+    "date": "2022/09/23 ",
+    "name": "DD",
+    "post": "1",
+    "start": "14:50:33.255888300",
+    "end": "15:50:33.255888300",
+    "duration": "1",
+    "gameName": "PES",
+    "ref": "7385",
+    "amount": "10",
+    "console": "XBOX",
+    "screen": "null"
+  }
+
+
+
+//   ok let me try to explain what i want to do
