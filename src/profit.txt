@@ -1,0 +1,3 @@
+name : MOHAMED | date : 2022/09/24  | profit : 10 DH,
+name : M | date : 2022/09/25  | profit : 10 DH.
+name : K | date : 2022/09/25  | profit : 10 DH.
