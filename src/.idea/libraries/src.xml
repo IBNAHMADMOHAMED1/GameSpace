@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="src">
+    <CLASSES />
+    <JAVADOC>
+      <root url="https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple/1.1" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$" />
+    </SOURCES>
+  </library>
+</component>
