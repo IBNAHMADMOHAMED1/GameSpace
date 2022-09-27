@@ -1,3 +1,12 @@
-name : MOHAMED | date : 2022/09/24  | profit : 10 DH,
+name : MOHAMED | date : 2022/09/24  | profit : 10 DH.
 name : M | date : 2022/09/25  | profit : 10 DH.
 name : K | date : 2022/09/25  | profit : 10 DH.
+name : P | date : 2022/09/26  | profit : 65 DH.
+name : L | date : 2022/09/26  | profit : 10 DH.
+name : M | date : 2022/09/26  | profit : 10 DH.
+name : MM | date : 2022/09/26  | profit : 10 DH.
+name : OUSSAMA | date : 2022/09/26  | profit : 10 DH.
+name : KK | date : 2022/09/26  | profit : 10 DH.
+name : A | date : 2022/09/26  | profit : 10 DH.
+name : Q | date : 2022/09/26  | profit : 10 DH.
+name : MMM | date : 2022/09/27  | profit : 10 DH.

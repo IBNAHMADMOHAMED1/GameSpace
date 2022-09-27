@@ -5,7 +5,7 @@ public enum Games {
     PES("Pro Evolution Soccer", 1, 2,"XBOX", "DELL"),
     GOW("God of War", 4, 3,"XBOX", "SAMSUNG"),
     FORZA("Forza Horizon", 5, 6,"PLAYSTATION5", "DELL"),
-    RDR("Read Dead Redemption", 6, 5,"NINTENDOSWITCH", "HP"),
+    RDR("Read Dead Redemption", 6, 5,"XBOX", "ASUS"),
     MARIO("Super Mario", 7, 3, "XBOX", "ASUS"),
     FORTNITE("Fortnite", 9, 8, "NINTENDOSWITCH", "DELL");
     

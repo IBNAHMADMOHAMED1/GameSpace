@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         LocalTime time = LocalTime.now();
         Scanner scanner = new Scanner(System.in); //Scanner declaration
-        Player client = new Player();
+        Player client = new Player(); //Player declaration
         int choice;
         printDesign();
         do {

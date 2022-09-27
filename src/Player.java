@@ -31,7 +31,7 @@ public class Player {
     private LocalTime start;
     private LocalTime end;
     private int duration;
-    private Games gameName;
+    private Games infoGame;
     private int amount;
     private String console;
     private String screen;
@@ -77,63 +77,63 @@ public class Player {
         switch (game) {
 
             case 1:
-                gameName = Games.PES;
+                infoGame = Games.PES;
                 break;
             case 2:
-                gameName = Games.FIFA;
+                infoGame = Games.FIFA;
                 break;
             case 3:
-                gameName = Games.COD;
+                infoGame = Games.COD;
                 break;
             case 4:
-                gameName = Games.GOW;
+                infoGame = Games.GOW;
                 break;
             case 5:
-                gameName = Games.FORZA;
+                infoGame = Games.FORZA;
                 break;
             case 6:
-                gameName = Games.RDR;
+                infoGame = Games.RDR;
                 break;
             case 7:
-                gameName = Games.MARIO;
+                infoGame = Games.MARIO;
                 break;
             case 8:
-                gameName = Games.MINECRAFT;
+                infoGame = Games.MINECRAFT;
                 break;
             case 9:
-                gameName = Games.FORTNITE;
+                infoGame = Games.FORTNITE;
                 break;
         }
         ;
         int isalreadytaken1 = 0;
         int isalreadytaken2 = 0;
         for (int i = 0; i < users.size(); i++) {
-            if (users.get(i).get("post").equals(gameName.postN1))
+            if (users.get(i).get("post").equals(infoGame.postN1))
                 isalreadytaken1 = 1;
             else
                 isalreadytaken1 = 0;
-            if (users.get(i).get("post").equals(gameName.postN2))
+            if (users.get(i).get("post").equals(infoGame.postN2))
                 isalreadytaken2 = 1;
             else
                 isalreadytaken2 = 0;
         }
         if (isalreadytaken1 == 0 && isalreadytaken2 == 0) {
-            post = gameName.postN1;
-            console = gameName.console;
-            screen = gameName.screen;
-            System.out.println("You have chosen the screen " + gameName.screen);
+            post = infoGame.postN1;
+            console = infoGame.console;
+            screen = infoGame.screen;
+            System.out.println("You have chosen the screen " + infoGame.screen);
 
         } else if (isalreadytaken1 != 0 && isalreadytaken2 == 0) {
-            post = gameName.postN2;
-            console = gameName.console;
-            screen = gameName.screen;
+            post = infoGame.postN2;
+            console = infoGame.console;
+            screen = infoGame.screen;
         } else
             pushToLobby = true;
 
         scanner.nextLine();
         start = time;
         if (pushToLobby)
-            start = spot.isAvailable(start, users, gameName);
+            start = spot.isAvailable(start, users, infoGame);
            duration = printDuration();
            checkDuration(duration, start);
 
@@ -161,6 +161,8 @@ public class Player {
                 end = start.plusMinutes(540);
                 break;
         }
+        
+
         spot.getMaxEndTime(users);
         if (end.isAfter(LocalTime.parse("14:00:00")) && end.isBefore(LocalTime.parse("15:00:00"))) {
             System.out.println("You can't play between 12:00 and 14:00 you can come back 12:00 or after 14:00");
@@ -196,7 +198,7 @@ public class Player {
         client.put("start", start);
         client.put("end", end);
         client.put("duration", duration);
-        client.put("gameName", gameName);
+        client.put("infoGame", infoGame);
         client.put("ref", ref);
         client.put("amount", amount);
         client.put("console", console);
@@ -221,7 +223,7 @@ public class Player {
 
     public void showClients() {
         System.out.println("List of clients : ");
-        System.out.println(users);
+        // System.out.println(users);
         String[] details = new String[users.size()];
         for (int i = 0; i < users.size(); i++) {
             int dur = (int) users.get(i).get("duration");
@@ -229,7 +231,7 @@ public class Player {
                     + users.get(i).get("start") + " End : " + users.get(i).get("end") + " Duration : "
                     + users.get(i).get("duration")
                     + (dur == 30 ? " Minutes Game" : (dur == 1 ? " hour" : "hours") + " Game : ")
-                    + users.get(i).get("gameName") + " Ref : " + users.get(i).get("ref") + " Amount : "
+                    + users.get(i).get("infoGame") + " Ref : " + users.get(i).get("ref") + " Amount : "
                     + users.get(i).get("amount") + " Console : " + users.get(i).get("console") + " Screen : "
                     + users.get(i).get("screen");
         }
@@ -327,7 +329,7 @@ public class Player {
             json += "\"start\" : \"" + users.get(i).get("start") + "\",";
             json += "\"end\" : \"" + users.get(i).get("end") + "\",";
             json += "\"duration\" : \"" + users.get(i).get("duration") + "\",";
-            json += "\"gameName\" : \"" + users.get(i).get("gameName") + "\",";
+            json += "\"infoGame\" : \"" + users.get(i).get("infoGame") + "\",";
             json += "\"ref\" : \"" + users.get(i).get("ref") + "\",";
             json += "\"amount\" : \"" + users.get(i).get("amount") + "\",";
             json += "\"console\" : \"" + users.get(i).get("console") + "\",";
@@ -426,48 +428,62 @@ public class Player {
                 content += sc.nextLine() + System.lineSeparator();
             }
             content = content.replace(lineContent, "");
-       
+
             FileWriter writer = new FileWriter(FILE_NAME);
             writer.write(content);
             sc.close();
             writer.close();
         } catch (IOException e) {
             e.printStackTrace();
-            
+
         }
-       
-        
+
     }
     
-        public List<HashMap> ReadObjectFromJSONFile() {
-            List<HashMap> usersJson = new ArrayList<HashMap>();
-            JSONParser parser = new JSONParser();
-            // try {
-            // Object obj = parser.parse(new FileReader(
-            // "C:\\Users\\youcode\\Desktop\\simpl_java\\scaner\\GameSpace\\src\\test.json"));
-            // JSONArray jsonArray = new JSONArray();
-            // for (int i = 0; i < jsonArray.size(); i++) {
-            // JSONObject jsonObject = (JSONObject) jsonArray.get(i);
-            // HashMap<String, Object> user = new HashMap<String, Object>();
-            // user.put("date", jsonObject.get("date"));
-            // user.put("name", jsonObject.get("name"));
-            // user.put("post", jsonObject.get("post"));
-            // user.put("start", jsonObject.get("start"));
-            // user.put("end", jsonObject.get("end"));
-            // user.put("duration", jsonObject.get("duration"));
-            // user.put("gameName", jsonObject.get("gameName"));
-            // user.put("ref", jsonObject.get("ref"));
-            // user.put("amount", jsonObject.get("amount"));
-            // user.put("console", jsonObject.get("console"));
-            // user.put("screen", jsonObject.get("screen"));
-            // usersJson.add(user);
-            // }
-            // } catch (Exception e) {
-            // e.printStackTrace();
-            // }
-    
-            return usersJson;
-    
-        }
+    public List<HashMap> ReadObjectFromJSONFile() {
+        List<HashMap> usersJson = new ArrayList<HashMap>();
+        JSONParser parser = new JSONParser();
+        // try {
+        // Object obj = parser.parse(new FileReader(
+        // "C:\\Users\\youcode\\Desktop\\simpl_java\\scaner\\GameSpace\\src\\test.json"));
+        // JSONArray jsonArray = new JSONArray();
+        // for (int i = 0; i < jsonArray.size(); i++) {
+        // JSONObject jsonObject = (JSONObject) jsonArray.get(i);
+        // HashMap<String, Object> user = new HashMap<String, Object>();
+        // user.put("date", jsonObject.get("date"));
+        // user.put("name", jsonObject.get("name"));
+        // user.put("post", jsonObject.get("post"));
+        // user.put("start", jsonObject.get("start"));
+        // user.put("end", jsonObject.get("end"));
+        // user.put("duration", jsonObject.get("duration"));
+        // user.put("infoGame", jsonObject.get("infoGame"));
+        // user.put("ref", jsonObject.get("ref"));
+        // user.put("amount", jsonObject.get("amount"));
+        // user.put("console", jsonObject.get("console"));
+        // user.put("screen", jsonObject.get("screen"));
+        // usersJson.add(user);
+        // }
+        // } catch (Exception e) {
+        // e.printStackTrace();
+        // }
+
+        return usersJson;
+
+    }
+
+    public  boolean setTimeout(Runnable runnable, int delay){
+        
+        boolean  isalreadytaken = true;
+        new Thread(() -> { 
+                // try {
+                    // Thread.sleep(delay);
+                    // runnable.run();
+                    // isalreadytaken = false;
+                // } catch (InterruptedException e) {
+                //     e.printStackTrace();
+                // }
+            }).start();
+        return isalreadytaken;
+    }
 
 }
